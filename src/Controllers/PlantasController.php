@@ -3,15 +3,15 @@ namespace App\Controllers;
 
 use App\Domain\Repositories\PlantasRepositoryInterface;
 use App\DTOs\PlantasDTO;
-use App\UseCases\CreateRelacionComercial;
-use App\UseCases\GetAllRelacionComercial;
-use App\UseCases\GetByIdRelacionComercial;
-use App\UseCases\UpdateRelacionComercial;
-use App\UseCases\DeleteRelacionComercial;
+use App\UseCases\CreatePlantas;
+use App\UseCases\GetAllPlantas;
+use App\UseCases\GetByIdPlantas;
+use App\UseCases\UpdatePlantas;
+use App\UseCases\DeletePlantas;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
-class RelacionComercialController {
+class PlantasController {
     public function __construct(private PlantasRepositoryInterface $repo) {}
 
     public function index(Request $request, Response $response): Response {

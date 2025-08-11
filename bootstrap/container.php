@@ -10,6 +10,11 @@ use Psr\Http\Message\ResponseFactoryInterface;
 use App\Domain\Repositories\UserRepositoryInterface;
 use App\Infrastructure\Repositories\EloquentUserRepository;
 
+// Relacion Comercial
+
+use App\Domain\Repositories\RelacionComercialRepositoryInterface;
+use App\Infrastructure\Repositories\EloquentRelacionComercialRepository;
+
 // Plantas
 
 use App\Domain\Repositories\PlantasRepositoryInterface;
@@ -27,7 +32,13 @@ $container->set(UserRepositoryInterface::class,function(){
     return new EloquentUserRepository();
 });
 
-// 2. Plantas
+// 2. RelacionComercial
+
+$container->set(RelacionComercialRepositoryInterface::class,function(){
+    return new EloquentRelacionComercialRepository();
+});
+
+// 3. Plantas
 
 $container->set(PlantasRepositoryInterface::class,function(){
     return new EloquentPlantasRepository();

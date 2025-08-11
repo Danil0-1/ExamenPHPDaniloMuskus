@@ -10,7 +10,7 @@ use Slim\Interfaces\ErrorHandlerInterface;
 
 // Variables de .env
 $dotenv = Dotenv::createImmutable(__DIR__ . '/');
-$dotenv->load(); // $_ENV[...]
+$dotenv->load(); // $_ENV[...]a
 
 // Iniciar la conexion con la DB
 Connection::init();
@@ -31,6 +31,7 @@ $errorHanlder->setDefaultErrorHandler($container->get(ErrorHandlerInterface::cla
 (require_once 'public/index.php')($app);
 // Ejecutando los script de routes/
 (require_once 'routes/users.php')($app);
+(require_once 'routes/relacion_comercial.php')($app);
 (require_once 'routes/plantas.php')($app);
 
 $app->run();
